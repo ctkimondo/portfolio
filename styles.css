@@ -5,12 +5,20 @@
 }
 
 :root {
-  --black: #050f05;
-  --green: #00ff41;
-  --green-dim: #00c032;
-  --green-dark: #004d14;
-  --green-faint: rgba(0, 255, 65, 0.04);
-  --amber: #ffb000;
+  /* Deep void — greens read brighter against it without extra glow */
+  --black: #020805;
+  /* Slightly softer than pure phosphor — less “neon pop” */
+  --green: #00cc52;
+  /* Secondary copy — paragraphs, nav, links */
+  --green-dim: #2bcf6a;
+  /* Meta / small greyed text — IDs, prefixes, footer, stats labels */
+  --green-muted: #5eb88a;
+  /* borders, frames (unchanged feel) */
+  --green-dark: #0f3322;
+  --green-faint: rgba(0, 180, 80, 0.04);
+  /* Profile labels (USER:, DEGREE:, …) */
+  --green-label: #3ddc7a;
+  --amber: #c9a24a;
   --mono: "Share Tech Mono", monospace;
   --vt: "VT323", monospace;
 }
@@ -19,6 +27,7 @@ html {
   scroll-behavior: smooth;
   /* ~18.4px from typical 16px default — easier on older eyes */
   font-size: 115%;
+  background: var(--black);
 }
 
 body {
@@ -31,7 +40,7 @@ body {
   cursor: none;
 }
 
-/* CRT effects — lighter scanlines + soft vignette (no full-screen flicker) */
+/* CRT — faint scanlines; vignette pulls focus to center without spotlight drama */
 body::before {
   content: "";
   position: fixed;
@@ -40,8 +49,8 @@ body::before {
     0deg,
     transparent,
     transparent 3px,
-    rgba(0, 0, 0, 0.035) 3px,
-    rgba(0, 0, 0, 0.035) 6px
+    rgba(0, 0, 0, 0.028) 3px,
+    rgba(0, 0, 0, 0.028) 6px
   );
   pointer-events: none;
   z-index: 9998;
@@ -53,23 +62,23 @@ body::after {
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    transparent 72%,
-    rgba(0, 0, 0, 0.38) 100%
+    transparent 68%,
+    rgba(0, 0, 0, 0.42) 100%
   );
   pointer-events: none;
   z-index: 9997;
 }
 
-/* custom cursor — slower, softer blink */
+/* custom cursor — low-key blink */
 #cursor {
   position: fixed;
-  width: 16px;
-  height: 20px;
-  background: var(--green);
+  width: 14px;
+  height: 18px;
+  background: var(--green-dim);
   pointer-events: none;
   z-index: 10000;
-  animation: blink 1.5s step-end infinite;
-  opacity: 0.92;
+  animation: blink 1.6s step-end infinite;
+  opacity: 0.72;
   mix-blend-mode: difference;
 }
 
@@ -79,7 +88,7 @@ body::after {
     opacity: 1;
   }
   50% {
-    opacity: 0;
+    opacity: 0.35;
   }
 }
 
@@ -123,17 +132,16 @@ nav {
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: color 0.1s;
+  transition: color 0.2s ease;
 }
 
 .nav-links a::before {
   content: "> ";
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 .nav-links a:hover {
   color: var(--green);
-  text-shadow: 0 0 6px rgba(0, 255, 65, 0.45);
 }
 
 /* HERO / BOOT */
@@ -155,7 +163,7 @@ nav {
 
 .boot-line {
   font-size: 0.82rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
   opacity: 0;
 }
 
@@ -221,7 +229,7 @@ nav {
 }
 
 .t-key {
-  color: var(--green-dark);
+  color: var(--green-label);
   min-width: 155px;
 }
 
@@ -238,7 +246,6 @@ nav {
   font-size: clamp(2.75rem, 7.5vw, 6.5rem);
   line-height: 1;
   color: var(--green);
-  text-shadow: 0 0 14px rgba(0, 255, 65, 0.28);
   margin-bottom: 0.5rem;
   opacity: 0;
   animation: lineIn 0.2s 0.95s forwards;
@@ -255,7 +262,7 @@ nav {
 }
 
 .ascii-sub .prompt {
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 .hero-prompt {
@@ -281,15 +288,13 @@ nav {
   padding: 0.6rem 1.5rem;
   text-decoration: none;
   cursor: none;
-  transition: all 0.1s;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .btn-terminal:hover {
   background: var(--green-faint);
-  border-color: var(--green);
+  border-color: var(--green-dim);
   color: var(--green);
-  text-shadow: 0 0 5px rgba(0, 255, 65, 0.4);
-  box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
 }
 
 /* SECTIONS */
@@ -310,7 +315,6 @@ nav {
   font-size: 2rem;
   color: var(--green);
   letter-spacing: 0.08em;
-  text-shadow: 0 0 8px rgba(0, 255, 65, 0.22);
 }
 
 .sec-line {
@@ -321,7 +325,7 @@ nav {
 
 .sec-num {
   font-size: 0.75rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 /* PROJECTS */
@@ -338,7 +342,7 @@ nav {
 }
 
 .proj:hover {
-  background: var(--green-faint);
+  background: rgba(0, 120, 55, 0.06);
   padding: 1.5rem;
   margin: 0 -1.5rem;
 }
@@ -353,21 +357,21 @@ nav {
 
 .proj-id {
   font-size: 0.75rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
   min-width: 5rem;
 }
 
 .proj-name {
   font-family: var(--vt);
   font-size: 1.55rem;
-  color: var(--green);
+  color: var(--green-dim);
   letter-spacing: 0.05em;
 }
 
 .proj-status {
   font-size: 0.72rem;
   color: var(--amber);
-  border: 1px solid rgba(255, 176, 0, 0.3);
+  border: 1px solid rgba(201, 162, 74, 0.35);
   padding: 0.15rem 0.5rem;
   margin-left: auto;
 }
@@ -377,7 +381,22 @@ nav {
   color: var(--green-dim);
   line-height: 1.75;
   margin-bottom: 1rem;
-  max-width: 640px;
+  max-width: 680px;
+}
+
+.proj-lead {
+  display: block;
+  color: var(--green-dim);
+  margin-bottom: 0.55rem;
+  line-height: 1.65;
+}
+
+.proj-tech {
+  display: block;
+  color: var(--green-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
 }
 
 .proj-stats {
@@ -396,12 +415,12 @@ nav {
 .pstat-val {
   font-family: var(--vt);
   font-size: 1.35rem;
-  color: var(--green);
+  color: var(--green-dim);
 }
 
 .pstat-lbl {
   font-size: 0.68rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -415,7 +434,7 @@ nav {
 
 .stack-tag {
   font-size: 0.72rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
   border: 1px solid var(--green-dark);
   padding: 0.2rem 0.5rem;
 }
@@ -424,17 +443,16 @@ nav {
   font-size: 0.8rem;
   color: var(--green-dim);
   text-decoration: none;
-  transition: color 0.1s, text-shadow 0.1s;
+  transition: color 0.2s ease;
 }
 
 .proj-link-t:hover {
   color: var(--green);
-  text-shadow: 0 0 5px rgba(0, 255, 65, 0.45);
 }
 
 .proj-link-t::before {
   content: "$ open ";
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 /* SKILLS — grouped tags (no progress bars) */
@@ -472,9 +490,8 @@ nav {
 }
 
 .skill-tag:hover {
-  color: var(--green);
-  border-color: var(--green-dim);
-  background: var(--green-faint);
+  color: var(--green-dim);
+  border-color: rgba(0, 163, 68, 0.55);
 }
 
 /* BACKGROUND */
@@ -514,7 +531,7 @@ nav {
 .bg-entry-title {
   font-family: var(--vt);
   font-size: 1.35rem;
-  color: var(--green);
+  color: var(--green-dim);
   margin-bottom: 0.2rem;
 }
 
@@ -526,7 +543,7 @@ nav {
 
 .bg-entry-date {
   font-size: 0.72rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
   margin-bottom: 0.6rem;
 }
 
@@ -549,7 +566,7 @@ nav {
   content: ">";
   position: absolute;
   left: 0;
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 /* CONTACT */
@@ -560,8 +577,7 @@ nav {
 .contact-prompt {
   font-family: var(--vt);
   font-size: clamp(2.25rem, 5.5vw, 4.5rem);
-  color: var(--green);
-  text-shadow: 0 0 12px rgba(0, 255, 65, 0.22);
+  color: var(--green-dim);
   margin-bottom: 0.5rem;
 }
 
@@ -586,7 +602,7 @@ nav {
 }
 
 .cmd-row .sym {
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 .cmd-row a {
@@ -597,7 +613,6 @@ nav {
 
 .cmd-row a:hover {
   color: var(--green);
-  text-shadow: 0 0 5px rgba(0, 255, 65, 0.45);
 }
 
 footer {
@@ -609,7 +624,7 @@ footer {
 
 footer p {
   font-size: 0.72rem;
-  color: var(--green-dark);
+  color: var(--green-muted);
 }
 
 .reveal {
