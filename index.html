@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIMONDO.SYS — PORTFOLIO v2.4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="cursor"></div>
+
+<nav>
+  <a class="nav-logo" href="#">KIMONDO.SYS<span class="blink">▌</span></a>
+  <ul class="nav-links">
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#background">background</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="boot-lines">
+    <div class="boot-line ok">BIOS v2.4.1 — System check complete</div>
+    <div class="boot-line ok">Loading portfolio kernel...</div>
+    <div class="boot-line ok">Mounting /projects /skills /experience</div>
+    <div class="boot-line ok">Connecting to github.com/ctkimondo</div>
+    <div class="boot-line ok">Ready</div>
+  </div>
+
+  <div class="terminal-box">
+    <div class="t-row"><span class="t-key">USER:</span><span class="t-val">Caleb Kimondo</span></div>
+    <div class="t-row"><span class="t-key">DEGREE:</span><span class="t-val">B.S. Computer Science — UCF</span></div>
+    <div class="t-row"><span class="t-key">FOCUS:</span><span class="t-val amber">Data Engineering · AI Systems</span></div>
+    <div class="t-row"><span class="t-key">STATUS:</span><span class="t-val amber">Available for opportunities</span></div>
+    <div class="t-row"><span class="t-key">LOCATION:</span><span class="t-val">Orlando, FL</span></div>
+    <div class="t-row"><span class="t-key">HONORS:</span><span class="t-val">President's Honors Roll — Fall 2024</span></div>
+  </div>
+
+  <div class="ascii-name">CALEB KIMONDO</div>
+  <div class="ascii-sub"><span class="prompt">system@portfolio:~$</span> echo "Building pipelines, AI systems, and data infrastructure."</div>
+  <div class="hero-prompt">
+    <span class="prompt-sym">$</span>
+    <a href="#projects" class="btn-terminal">./explore_projects.sh</a>
+    <a href="https://github.com/ctkimondo" target="_blank" class="btn-terminal">open github</a>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="sec-header reveal">
+    <span class="sec-num">[01]</span>
+    <div class="sec-line"></div>
+    <span class="sec-title">PROJECTS</span>
+  </div>
+  <div class="proj-list">
+    <div class="proj reveal">
+      <div class="proj-header">
+        <span class="proj-id">PROJECT_01</span>
+        <span class="proj-name">AI JOB ALERTER</span>
+        <span class="proj-status">DEPLOYED</span>
+      </div>
+      <p class="proj-desc">> Distributed streaming pipeline using Apache Kafka to process and rank job listings in real time. LLM scoring engine via Gemini API for semantic matching with instant high-match notifications. PostgreSQL for persistent storage and deduplication.</p>
+      <div class="proj-stats">
+        <div class="pstat"><span class="pstat-val">REAL-TIME</span><span class="pstat-lbl">Processing</span></div>
+        <div class="pstat"><span class="pstat-val">LLM</span><span class="pstat-lbl">Powered</span></div>
+        <div class="pstat"><span class="pstat-val">KAFKA</span><span class="pstat-lbl">Streaming</span></div>
+      </div>
+      <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Apache Kafka</span><span class="stack-tag">Docker</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Gemini API</span></div>
+      <a href="https://github.com/ctkimondo/Job-Alerter" target="_blank" class="proj-link-t">github.com/ctkimondo/Job-Alerter</a>
+    </div>
+    <div class="proj reveal">
+      <div class="proj-header">
+        <span class="proj-id">PROJECT_02</span>
+        <span class="proj-name">INFLATION REFINERY</span>
+        <span class="proj-status">ACTIVE</span>
+      </div>
+      <p class="proj-desc">> Dockerized ETL pipeline processing 1.6M+ API records. ~80% storage optimization via Apache Parquet columnar format. AWS S3 persistence via Boto3. Automated scheduling through GitHub Actions CI/CD.</p>
+      <div class="proj-stats">
+        <div class="pstat"><span class="pstat-val">1.6M+</span><span class="pstat-lbl">Records</span></div>
+        <div class="pstat"><span class="pstat-val">~80%</span><span class="pstat-lbl">Storage Saved</span></div>
+        <div class="pstat"><span class="pstat-val">S3</span><span class="pstat-lbl">Cloud</span></div>
+      </div>
+      <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Docker</span><span class="stack-tag">Parquet</span><span class="stack-tag">AWS S3</span><span class="stack-tag">GitHub Actions</span></div>
+      <a href="https://github.com/ctkimondo/Inflation-Tracker" target="_blank" class="proj-link-t">github.com/ctkimondo/Inflation-Tracker</a>
+    </div>
+    <div class="proj reveal">
+      <div class="proj-header">
+        <span class="proj-id">PROJECT_03</span>
+        <span class="proj-name">AIRCRAFT RISK ANALYSIS</span>
+        <span class="proj-status">COMPLETE</span>
+      </div>
+      <p class="proj-desc">> Analyzed 90K+ aviation records to model safety risk trends. Engineered a custom fatality index for accident-phase risk classification. Tableau dashboard built for stakeholder decision support.</p>
+      <div class="proj-stats">
+        <div class="pstat"><span class="pstat-val">90K+</span><span class="pstat-lbl">Records</span></div>
+        <div class="pstat"><span class="pstat-val">SAFETY</span><span class="pstat-lbl">Analytics</span></div>
+        <div class="pstat"><span class="pstat-val">TABLEAU</span><span class="pstat-lbl">Dashboard</span></div>
+      </div>
+      <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Pandas</span><span class="stack-tag">SQL</span><span class="stack-tag">Tableau</span></div>
+      <a href="https://github.com/ctkimondo/Exploring-aircrafts-and-their-risks" target="_blank" class="proj-link-t">github.com/ctkimondo/Exploring-aircrafts-and-their-risks</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="sec-header reveal">
+    <span class="sec-num">[02]</span>
+    <div class="sec-line"></div>
+    <span class="sec-title">SKILLS</span>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-category">
+      <div class="skill-cat-title">// Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">Java</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">// Data Engineering</div>
+      <div class="skill-tags">
+        <span class="skill-tag">ETL pipelines</span>
+        <span class="skill-tag">Apache Kafka</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Parquet</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">// Cloud &amp; Infra</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">AWS (S3, IAM)</span>
+        <span class="skill-tag">GitHub Actions</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">// AI / Analytics</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LLM integration</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Pandas / NumPy</span>
+        <span class="skill-tag">Model evaluation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="background">
+  <div class="sec-header reveal">
+    <span class="sec-num">[03]</span>
+    <div class="sec-line"></div>
+    <span class="sec-title">SYS_INFO</span>
+  </div>
+  <div class="bg-cols reveal">
+    <div class="bg-block">
+      <div class="bg-block-title">// education.log</div>
+      <div class="bg-entry">
+        <div class="bg-entry-title">B.S. COMPUTER SCIENCE</div>
+        <div class="bg-entry-org">University of Central Florida — Orlando, FL</div>
+        <div class="bg-entry-date">Expected: December 2027</div>
+        <ul><li>President's Honors Roll — Fall 2024</li></ul>
+      </div>
+      <div class="bg-entry">
+        <div class="bg-entry-title">CERTIFICATIONS</div>
+        <ul><li>CS50 — Harvard · C, SQL, Python, Flask</li><li>CodePath WEB101 · HTML, CSS, JavaScript</li></ul>
+      </div>
+      <div class="bg-entry">
+        <div class="bg-entry-title">PUBLICATION</div>
+        <div class="bg-entry-org">London Journal of Social Sciences, Vol. 6</div>
+        <ul><li>"The Impact of AI on Teaching and Learning"</li><li>15 citations — pp. 124–129</li></ul>
+      </div>
+    </div>
+    <div class="bg-block">
+      <div class="bg-block-title">// experience.log</div>
+      <div class="bg-entry">
+        <div class="bg-entry-title">OFFICE ASSISTANT</div>
+        <div class="bg-entry-org">Lysak Hotel — Machakos, Kenya</div>
+        <div class="bg-entry-date">Jan–Jun 2024</div>
+        <ul><li>Automated Excel workflows — 20% time reduction</li><li>Managed data integrity via structured auditing</li><li>Digitized document systems for fast retrieval</li></ul>
+      </div>
+      <div class="bg-entry">
+        <div class="bg-entry-title">VOLUNTEER</div>
+        <div class="bg-entry-org">Jitegemee Children's Program</div>
+        <div class="bg-entry-date">Spring 2024</div>
+        <ul><li>Fundraised tuition for underprivileged students</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="contact-prompt reveal">INITIATE_CONTACT</div>
+  <div class="contact-line reveal">> Open to full-time roles, internships, and collaborations.</div>
+  <div class="contact-cmds reveal">
+    <div class="cmd-row"><span class="sym">$</span><span>send_email</span><a href="mailto:ctkimondo@gmail.com">ctkimondo@gmail.com</a></div>
+    <div class="cmd-row"><span class="sym">$</span><span>open_github</span><a href="https://github.com/ctkimondo" target="_blank">github.com/ctkimondo</a></div>
+    <div class="cmd-row"><span class="sym">$</span><span>open_linkedin</span><a href="https://www.linkedin.com/in/calebkimondo/" target="_blank">https://www.linkedin.com/in/calebkimondo/</a></div>
+  </div>
+</section>
+
+<footer>
+  <p>KIMONDO.SYS v2.4 — UCF Computer Science 2027</p>
+  <p>ALL SYSTEMS OPERATIONAL ■</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
